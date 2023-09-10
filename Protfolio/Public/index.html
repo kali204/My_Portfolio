@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhay _Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueriers.css" />
+  </head>
+
+  <body>
+    <nav id="desktop-nav">
+      <div class="left">Abhay.S.Deopa</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#Contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Abhay S Deopa</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#Service" onclick="toggleMenu()">Service</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <hr />
+    <!-- ----------------------------Profile-------------------------- -->
+    <div id="Profile">
+        <img src="your-image.jpg" alt="Your Name" class="w-32 h-32 rounded-full mx-auto mb-4">
+        <h2>Hello, I'm</h2>
+        <h1><span>Abhay.S.</span> Deopa</h1>
+        <h5>Web Developer</h5>
+        <div id="buttons">
+          <a href="https://github.com/kali204" target="_blank" class="btn btn-github">GitHub</a>
+          <a href="My_Resume.pdf" target="_blank" class="btn btn-cv">CV</a>
+        </div>
+      </div>
+    <!-- ------------------about---------------------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="2.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About ME</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+              mollitia expedita officia non unde laboriosam quibusdam!
+              Distinctio, minus voluptatibus. Iure consequatur nihil officiis
+              laudantium! Laborum quos quae nulla et libero.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
+                <li><span>Web Development</span><br />Web App Development</li>
+                <li><span>C++</span><br />C++ Programming</li>
+                <li><span>Python</span><br />Python Programming</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>CodSoft</span><br />2023</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>BTech(CSE)</span><br />2021-2025</li>
+                <li><span>ML & AI </span><br />Udemy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -----------------------------Service---------------------------------- -->
+
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <ion-icon name="crop-outline"></ion-icon>
+            <h2>Web Design</h2>
+            <p>
+              Our web design services are your gateway to a captivating online
+              presence. We craft websites that blend artistic flair with
+              seamless functionality, creating digital experiences that resonate
+              with your audience. Our approach is centered on user-centric
+              design, ensuring that every visitor enjoys an intuitive and
+              visually striking journey. With a responsive and mobile-friendly
+              foundation, we make certain your website shines on every device.
+            </p>
+            <a href="#Contact">Learn more</a>
+          </div>
+          <div>
+            <ion-icon name="code-slash-outline"></ion-icon>
+            <h2>Web Devlopment</h2>
+            <p>
+                Our web development services transform your ideas into functional and
+                dynamic online solutions. We specialize in coding websites and web
+                applications that not only look great but also work seamlessly.
+                Whether you need a custom web application, e-commerce platform,
+                or a complex database-driven website, our team has the expertise
+                to make it happen.
+            </p>
+            <a href="#Contact">Learn more</a>
+          </div>
+          <div>
+            <h2>C++ Programming</h2>
+            <p>
+                Our C++ programming services empower businesses and individuals to harness
+                the power of this versatile programming language. We offer comprehensive
+                C++ development solutions, from coding and debugging to optimizing and
+                maintaining C++ applications. Whether you need a custom software solution,
+                game development, or system-level programming, our experienced team is
+                ready to meet your needs.
+            </p>
+            <a href="#Contact">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------------------------------------Contact-------------------------------------------------------------- -->
+    <section id="Contact" class="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="email.png" alt="Email icon" class="icon contact-icon" />
+          <p>
+            <a href="mailto:abhaystark77@gmail.com">abhaystark77gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer">
+        <div class="first">
+          <h2>Developer's Protfolio</h2>
+        </div>
+        <div class="second">
+          <a
+            class="socialLink"
+            href="https://www.linkedin.com/in/abhay-deopa-746633221/"
+            target="_blank"
+          >
+            <span class="icon"><ion-icon name="logo-linkedin"></ion-icon></span>
+          </a>
+        </div>
+        <div class="third">
+          <a
+            class="socialLink"
+            href="https://www.instagram.com/abhay.deopa/"
+            target="_blank"
+          >
+            <span class="icon"
+              ><ion-icon name="logo-instagram"></ion-icon
+            ></span>
+          </a>
+        </div>
+        <div class="forth">abhaystark77@gmail.com</div>
+      </div>
+      <div class="text-center">© abhayportfolio.com All right reserved.</div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web Developer", "ML & AI", "Video Editor"],
+        typeSpeed: 70,
+      });
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
