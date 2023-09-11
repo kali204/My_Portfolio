@@ -162,7 +162,7 @@ section {
 #Profile {
     background: linear-gradient(to right, #7b698b, #b273df);
     color: white;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
