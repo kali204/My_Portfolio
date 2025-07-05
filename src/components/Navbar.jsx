@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.png"; // Adjust the path as necessary
 
 const Navbar = () => {
   const [active, setActive] = useState(null);

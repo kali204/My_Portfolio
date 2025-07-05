@@ -1,14 +1,14 @@
 import React from "react";
-import { FaLaptopCode, FaDatabase, FaMobileAlt, FaRobot, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaLaptopCode, FaDatabase, FaWallet, FaRobot, FaHome, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    icon: <FaRobot />,
-    title: "AI Chatbot",
-    description: "A smart chatbot built with NLP & Machine Learning.",
-    techStack: "Python, TensorFlow, React",
-    github: "https://github.com/your-github-repo",
-    website: "https://your-website.com",
+    icon: <FaHome />,
+    title: "Homestay Website",
+    description: "A beautiful and user-friendly website for booking homestays.",
+    techStack: "React, Node.js, MongoDB",
+    github: "https://github.com/kali204/Homestay",
+    website: "https://homestay-henna.vercel.app/",
   },
   {
     icon: <FaLaptopCode />,
@@ -19,19 +19,11 @@ const projects = [
     website: "https://your-website.com",
   },
   {
-    icon: <FaDatabase />,
-    title: "Database System",
-    description: "Efficient data management with MySQL & MongoDB.",
-    techStack: "MySQL, MongoDB, Express.js",
-    github: "https://github.com/your-github-repo",
-    website: "https://your-website.com",
-  },
-  {
-    icon: <FaMobileAlt />,
-    title: "Mobile App",
-    description: "Cross-platform React Native mobile application.",
-    techStack: "React Native, Firebase",
-    github: "https://github.com/your-github-repo",
+    icon: <FaWallet />,
+    title: "Paytm ACID Project",
+    description: "Implemented an ACID-compliant system to ensure secure and reliable transactions.",
+    techStack: "Java, Spring Boot, MySQL",
+    github: "https://github.com/kali204/Paytm",
     website: "https://your-website.com",
   },
 ];
