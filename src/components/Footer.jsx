@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <h2 className="footer-logo">Abhay Dev</h2>
-        <p className="footer-text">Building Web & AI Applications with Passion 🚀</p>
+        <p className="footer-text">Building Web Application & AI Applications with Passion 🚀</p>
 
         {/* Social Links */}
         <div className="social-links">
