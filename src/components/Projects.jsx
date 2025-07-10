@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaDatabase, FaWallet, FaRobot, FaHome, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaLaptopCode,FaWallet,FaGlobe, FaHome, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
@@ -19,6 +19,14 @@ const projects = [
     website: "https://your-website.com",
   },
   {
+    icon: <FaWallet />,
+    title: "Paytm ACID Project",
+    description: "Implemented an ACID-compliant system to ensure secure and reliable transactions.",
+    techStack: "Java, Spring Boot, MySQL",
+    github: "https://github.com/kali204/Paytm",
+    website: "https://your-website.com",
+  },
+  {
   icon: <FaGlobe />,
   title: "Tripchi Travel Agency Website",
   description: "Developed a modern, responsive website for a travel agency to showcase destinations, enable bookings, and integrate WhatsApp inquiries.",
@@ -27,6 +35,7 @@ const projects = [
   website: "https://tripchi.in",
 }
 
+ 
 ];
 
 const Projects = () => {
