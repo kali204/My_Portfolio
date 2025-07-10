@@ -19,13 +19,14 @@ const projects = [
     website: "https://your-website.com",
   },
   {
-    icon: <FaWallet />,
-    title: "Paytm ACID Project",
-    description: "Implemented an ACID-compliant system to ensure secure and reliable transactions.",
-    techStack: "Java, Spring Boot, MySQL",
-    github: "https://github.com/kali204/Paytm",
-    website: "https://your-website.com",
-  },
+  icon: <FaGlobe />,
+  title: "Tripchi Travel Agency Website",
+  description: "Developed a modern, responsive website for a travel agency to showcase destinations, enable bookings, and integrate WhatsApp inquiries.",
+  techStack: "HTML, CSS, JavaScript, Tailwind CSS",
+  github: "https://github.com/your-username/tripchi",
+  website: "https://tripchi.in",
+}
+
 ];
 
 const Projects = () => {
