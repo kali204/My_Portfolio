@@ -2,53 +2,52 @@ import React, { useState } from "react";
 import CanvasModel from "./Canvas/CanvasModel";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+
 const Contact = () => {
-  // State to store user input
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const [status, setStatus] = useState({ sending: false, message: "", error: false });
+
   // Handle input changes
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   // Handle form submission
- 
-const handleSubmit = (e) => {
-  e.preventDefault(); // Prevents page reload
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Create template params based on EmailJS template
-  const templateParams = {
-    from_name: formData.name,   // Ensure these match your EmailJS template keys
-    from_email: formData.email,
-    message: formData.message,
+    setStatus({ sending: true, message: "", error: false });
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_dbzi46d",   // replace with your EmailJS Service ID
+        "template_uz1nrxc",  // replace with your EmailJS Template ID
+        templateParams,
+        "FoyxbiMQQAQbJATXs" // replace with your EmailJS Public Key
+      )
+      .then(() => {
+        setStatus({ sending: false, message: "Your message has been sent successfully!", error: false });
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => {
+        setStatus({ sending: false, message: "Failed to send message. Please try again later.", error: true });
+      });
   };
 
-  emailjs
-    .send(
-      "service_dbzi46d",   // Replace with actual EmailJS Service ID
-      "template_uz1nrxc",  // Replace with actual EmailJS Template ID
-      templateParams,
-      "FoyxbiMQQAQbJATXs"       // Replace with actual EmailJS Public Key
-    )
-    .then((response) => {
-      console.log("Email sent successfully!", response);
-      alert("Your message has been sent successfully!"); // Show success message
-    })
-    .catch((error) => {
-      console.error("Error sending email:", error);
-      alert("Failed to send message. Please try again later."); // Show error message
-    });
-
-  // Reset form after submission
-  setFormData({ name: "", email: "", message: "" });
-};
-
   return (
-    <section className="contact">
+    <section id="contact" className="contact" aria-label="Contact section">
       <h2 className="contact-title">GET IN TOUCH</h2>
       <div className="contact-container">
         {/* Left Side: Contact Form */}
@@ -57,44 +56,67 @@ const handleSubmit = (e) => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         >
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate aria-describedby="form-status">
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                required 
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                aria-required="true"
+                placeholder="Your name"
+                disabled={status.sending}
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                required 
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                aria-required="true"
+                placeholder="your.email@example.com"
+                disabled={status.sending}
               />
             </div>
+
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
-                value={formData.message} 
-                onChange={handleChange} 
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
                 required
+                aria-required="true"
+                placeholder="Write your message here..."
+                disabled={status.sending}
               ></textarea>
             </div>
-            <button type="submit" className="submit-button">
-              Send Message
+
+            <button type="submit" className="submit-button" disabled={status.sending} aria-busy={status.sending}>
+              {status.sending ? "Sending..." : "Send Message"}
             </button>
+
+            {status.message && (
+              <p
+                id="form-status"
+                role="alert"
+                style={{ color: status.error ? "#FF6B6B" : "#4BB543", marginTop: "12px" }}
+              >
+                {status.message}
+              </p>
+            )}
           </form>
         </motion.div>
 
@@ -104,6 +126,7 @@ const handleSubmit = (e) => {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
         >
           <CanvasModel />
         </motion.div>

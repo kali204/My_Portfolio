@@ -8,7 +8,21 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   // Close mobile menu when clicking a link
-  const handleLinkClick = () => setOpen(false);
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
+  // Toggle the mobile menu
+  const toggleMenu = () => {
+    setOpen((prev) => !prev);
+  };
+
+  // Keyboard accessibility handler for hamburger toggle
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      toggleMenu();
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -17,14 +31,14 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </div>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger Icon for Mobile */}
       <div
         className={`navbar-toggle${open ? " open" : ""}`}
-        onClick={() => setOpen((prev) => !prev)}
-        aria-label="Toggle menu"
-        tabIndex={0}
+        onClick={toggleMenu}
+        onKeyPress={handleKeyPress}
         role="button"
-        onKeyPress={(e) => (e.key === "Enter" ? setOpen((prev) => !prev) : null)}
+        tabIndex={0}
+        aria-label={open ? "Close menu" : "Open menu"}
       >
         <span />
         <span />
