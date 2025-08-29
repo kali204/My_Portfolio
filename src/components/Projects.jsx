@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaWallet, FaGlobe, FaHome, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaLaptopCode, FaWallet, FaGlobe, FaHome, FaGithub, FaExternalLinkAlt, FaCoffee } from "react-icons/fa";
 
 const projects = [
   {
@@ -33,6 +33,30 @@ const projects = [
     techStack: "HTML, CSS, JavaScript, Tailwind CSS",
     github: "https://github.com/your-username/tripchi",
     website: "https://tripchi.in",
+  },
+  {
+    icon: <FaCoffee />,
+    title: "Not So Basic Coffee Cafe",
+    description: "Website for a coffee cafe with menu, location, and contact details.",
+    techStack: "React, Tailwind CSS",
+    github: "https://github.com/your-username/notsobasic-coffee",
+    website: "https://notsobasic-mu.vercel.app/",
+  },
+  {
+    icon: <FaCoffee />,
+    title: "Demo Cafe",
+    description: "Demo website for a cafe showcasing products and services.",
+    techStack: "React, CSS",
+    github: "https://github.com/your-username/cafe-snowy",
+    website: "https://cafe-snowy.vercel.app/",
+  },
+  {
+    icon: <FaLaptopCode />,
+    title: "Headphone Store Ecommerce",
+    description: "Full-fledged ecommerce website for selling headphones online.",
+    techStack: "React, Node.js, MongoDB",
+    github: "https://github.com/your-username/headphonestore",
+    website: "https://headphonestore-cmeo.onrender.com",
   },
 ];
 
