@@ -1,34 +1,39 @@
 import React from "react";
-
+import "../styles/about.css";
 const About = () => {
   return (
-    <section className="about" id="about" aria-label="About Me Section">
-      <div className="container">
-        <h2 className="section-title">ABOUT ME</h2>
-        <p className="section-subtitle">A Glimpse into My Journey</p>
+    <section className="about" id="about">
+      <div className="about-container">
+        <h2 className="about-title">About Me</h2>
+        <p className="about-tagline">
+          Building intelligent systems & real-world products 🚀
+        </p>
 
-        <div className="about-content">
-          <p className="about-description">
-            I’m a passionate <strong>AI & Full Stack Developer</strong> with expertise in <strong>Python, JavaScript, C++, and SQL</strong>.  
-            With a strong foundation in <strong>Machine Learning, Artificial Intelligence, and Web Development</strong>,  
-            I create intelligent, scalable, and high-performing applications. I love <strong>solving complex problems</strong>  
-            and <strong>pushing the boundaries of technology</strong> to make impactful solutions.
-          </p>
+        <p className="about-text">
+          I’m a <strong>Full Stack & AI Developer</strong> who loves turning
+          complex ideas into <strong>scalable, real-world applications</strong>.
+          My core strength lies in <strong>problem-solving</strong>,
+          system thinking, and building products that actually work in
+          <strong>real-life constraints</strong>.
+        </p>
 
-          <p className="about-description">
-            My projects, including <strong>MindMend (AI Chatbot)</strong> and <strong>PayMe (Fintech App)</strong>,  
-            showcase my ability to blend <strong>AI and software development</strong> seamlessly.  
-            Let’s <strong>collaborate and innovate together!</strong>
-          </p>
+        <p className="about-text">
+          Currently, I’m working on projects like a{" "}
+          <strong>decentralized proximity-based chat app</strong>,
+          exploring <strong>ACID properties through Paytm-like systems</strong>,
+          and building <strong>scalable full-stack platforms</strong>.
+          I enjoy working close to the core logic — from backend design
+          to real-time systems.
+        </p>
 
-          {/* Skills Section */}
-          <div className="skills-grid" aria-label="Skills List">
-            <div className="skill-card">AI & Machine Learning</div>
-            <div className="skill-card">Full Stack Development</div>
-            <div className="skill-card">Python & C++</div>
-            <div className="skill-card">React & Flask</div>
-            <div className="skill-card">Database Management</div>
-          </div>
+        <div className="skills">
+          <span>React</span>
+          <span>Java</span>
+          <span>Python</span>
+          <span>SQL</span>
+          <span>System Design</span>
+          <span>AI / ML</span>
+          <span>Real-time Apps</span>
         </div>
       </div>
     </section>

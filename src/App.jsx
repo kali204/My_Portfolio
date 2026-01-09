@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import './styles/globals.css';
 import './styles/animations.css';
 import About from "./components/About";
+import ProofWrapper from "./components/ProofWrapper";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
+      <ProofWrapper />
       <About/>
       <Skills />
       <Projects />

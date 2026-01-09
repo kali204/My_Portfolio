@@ -1,69 +1,111 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import HeroImage from "../assets/Hero.png"; // Ensure correct path
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import HeroImage from "../assets/Hero.png";
 
 const Hero = () => {
-  const fullText = "Abhay Singh Deopa";
-  const typingSpeed = 150; 
-  const [typedText, setTypedText] = useState("");
+  const name = "Abhay Singh Deopa";
+  const [text, setText] = useState("");
+  const indexRef = useRef(0);
 
+  // Typing effect
   useEffect(() => {
-    setTypedText(""); // Reset text before animation starts
-    let i = 0;
-
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.substring(0, i + 1)); // Properly update text without undefined
-        i++;
+    const interval = setInterval(() => {
+      if (indexRef.current <= name.length) {
+        setText(name.slice(0, indexRef.current));
+        indexRef.current++;
       } else {
-        clearInterval(typingInterval);
+        indexRef.current = 0;
       }
-    }, typingSpeed);
+    }, 120);
 
-    return () => clearInterval(typingInterval); // Cleanup interval
-  }, []); // Run only once when component mounts
+    return () => clearInterval(interval);
+  }, []);
+
+  // Scroll animation
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  // Scroll to projects
+  const handleViewWork = () => {
+    const section = document.getElementById("projects");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section className="hero">
-      {/* Left Side - Text */}
-      <motion.div
-        className="hero-left"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <h1 className="hero-title">
-          Hi, I'm <span className="gradient-text">{typedText}</span>
-          <motion.span 
-            className="cursor"
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
-          >
-            |
-          </motion.span>
-        </h1>
-        <p className="hero-subtitle">AI & Full Stack Developer</p>
-        <p className="hero-subtitle">Building Web & AI Applications</p>
-        <p className="hero-brand">PayMe | AI Chatbot</p>
-
-        <motion.button
-          className="cta-button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+    <section className="hero" id="home" ref={ref}>
+      <div className="hero-container">
+        {/* LEFT */}
+        <motion.div
+          className="hero-left"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          View My Work
-        </motion.button>
-      </motion.div>
+          <h1 className="hero-title">
+            Hi, I’m <br />
+            <span className="hero-name">
+              {text}
+              <span className="cursor">|</span>
+            </span>
+          </h1>
 
-      {/* Right Side - Hero Image */}
-      <motion.div
-        className="hero-right"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <img src={HeroImage} alt="Developer" className="hero-image" />
-      </motion.div>
+          <p className="hero-subtitle">
+            I build <strong>real-world systems</strong> — from
+            <strong> decentralized apps</strong> to
+            <strong> transaction-safe platforms</strong>.
+          </p>
+
+          <div className="hero-stats">
+            <div>
+              <span className="stat-number">5+</span>
+              <span className="stat-label">Production Projects</span>
+            </div>
+            <div>
+              <span className="stat-number">ACID</span>
+              <span className="stat-label">Transaction Design</span>
+            </div>
+            <div>
+              <span className="stat-number">P2P</span>
+              <span className="stat-label">Real-time Systems</span>
+            </div>
+          </div>
+
+          <div className="hero-cta">
+            {/* View Projects */}
+            <motion.button
+              className="cta-button primary"
+              onClick={handleViewWork}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              View Selected Work
+            </motion.button>
+
+            {/* Contact Email */}
+            <motion.a
+              href="mailto:abhaystark77@gmail.com"
+              className="cta-button secondary"
+              whileHover={{ x: 6 }}
+            >
+              Contact Me →
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* RIGHT */}
+        <motion.div
+          className="hero-right"
+          initial={{ opacity: 0, x: 40 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+        >
+          <img
+            src={HeroImage}
+            alt="Abhay Singh Deopa"
+            className="hero-image"
+          />
+        </motion.div>
+      </div>
     </section>
   );
 };
