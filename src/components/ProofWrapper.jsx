@@ -1,9 +1,9 @@
 import React from "react";
 import { FaGithub, FaCode } from "react-icons/fa";
-import useGithubStats from "./hooks/useGithubStats";
-import useLeetCodeStats from "./hooks/useLeetCodeStats";
-import useGithubActivity from "./hooks/useGithubActivity";
-import useCountUp from "./hooks/useCountUp";
+import useGithubStats from "../hooks/useGithubStats";
+import useLeetCodeStats from "../hooks/useLeetcodeStats";
+import useGithubActivity from "../hooks/useGithubActivity";
+import useCountUp from "../hooks/useCountUp";
 import "../styles/proof.css";
 
 const ProofWrapper = () => {
