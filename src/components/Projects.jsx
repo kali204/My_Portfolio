@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/projects.css";
+import "./projects.css";
 import {
   FaComments,
   FaWallet,
