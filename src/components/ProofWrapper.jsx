@@ -5,6 +5,7 @@ import useLeetCodeStats from "../hooks/useLeetcodeStats";
 import useGithubActivity from "../hooks/useGithubActivity";
 import useCountUp from "../hooks/useCountUp";
 import "../styles/proof.css";
+// ProofWrapper component to display GitHub and LeetCode stats
 
 const ProofWrapper = () => {
   const github = useGithubStats();
